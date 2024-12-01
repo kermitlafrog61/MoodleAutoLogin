@@ -1,0 +1,37 @@
+{
+    "manifest_version": 3,
+    "name": "Auto Login Extension",
+    "version": "1.0",
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting",
+        "tabs",
+        "webNavigation",
+        "https://www.el2019.kimep.kz/"
+    ],
+    "host_permissions": [
+        "https://el2019.kimep.kz/"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://el2019.kimep.kz/*"
+            ],
+            "js": [
+                "contentScript.js"
+            ]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
